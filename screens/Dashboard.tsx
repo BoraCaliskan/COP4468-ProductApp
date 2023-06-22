@@ -48,7 +48,7 @@ const Dashboard = ({ navigation }: any) => {
 
   const renderProductItem = ({ item }: any) => {
     return (
-      <View style={[styles.productItem, { borderBottomColor: colors.lightgray }]}>
+      <View style={[styles.productItem, { borderBottomColor: "lightgray" }]}>
         <Pressable onPress={() => navigateToProductDetail(item.id)}>
           <Text style={styles.productName}>{item.name}</Text>
         </Pressable>
@@ -57,8 +57,7 @@ const Dashboard = ({ navigation }: any) => {
             style={[styles.button, styles.addButton]}
             onPress={() => addToOrders(item)}
           >
-            <Icon name="plus" size={20} color="white" />
-            <Text style={styles.buttonText}>Add</Text>
+            <Icon name="cart-plus" size={20} color="white" />
           </Pressable>
           <Pressable
             style={[styles.button, styles.deleteButton]}

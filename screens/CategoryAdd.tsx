@@ -10,7 +10,7 @@ const CategoryAddScreen = () => {
   const { addCallback } = route.params;
   const [categoryName, setCategoryName] = useState('');
   const [categoryDetail, setCategoryDetail] = useState('');
-  const { setCategories } = route.params; // Retrieve the setCategories function from the route params
+  const { setCategories } = route.params; // Retrieves the setCategories function from the route params
 
 
   const handleAddCategory = () => {
@@ -22,8 +22,8 @@ const CategoryAddScreen = () => {
     axios
       .post('https://northwind.vercel.app/api/categories', newCategory)
       .then(() => {
-        setCategories(); // Call the setCategories function to update the categories immediately
-        navigation.goBack(); // Navigate back to the Category page
+        setCategories(); // Calls the setCategories function to update the categories immediately
+        navigation.goBack(); // Navigates back to the Category page
       })
       .catch(error => {
         console.error('Error adding category:', error);

@@ -15,7 +15,7 @@ const Orders = ({ navigation }: any) => {
 
   const renderProductItem = ({ item }: any) => {
     return (
-      <View style={[styles.orderItem, { borderBottomColor: colors.lightgray }]}>
+      <View style={[styles.orderItem, { borderBottomColor: "lightgray" }]}>
         <Text style={styles.productName}>{item.name}</Text>
         <Pressable
           style={styles.deleteButton}

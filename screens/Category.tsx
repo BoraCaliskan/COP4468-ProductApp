@@ -24,15 +24,15 @@ const CategoryScreen = () => {
       .catch(error => {
         console.error('Error fetching categories:', error);
       });
-  }, []); // Use an empty dependency array to ensure the callback is memoized
+  }, []); // Uses an empty dependency array to ensure the callback is memoized
 
   useEffect(() => {
     fetchCategories();
-  }, [fetchCategories]); // Call fetchCategories when the component mounts and when the fetchCategories function changes
+  }, [fetchCategories]); // Calls fetchCategories when the component mounts and when the fetchCategories function changes
 
   useFocusEffect(
     useCallback(() => {
-      fetchCategories(); // Call fetchCategories when the screen comes into focus
+      fetchCategories(); // Calls fetchCategories when the screen comes into focus
     }, [fetchCategories])
   );
 
@@ -50,12 +50,12 @@ const CategoryScreen = () => {
   const handleUpdateCategory = (categoryId: number) => {
     navigation.navigate('CategoryUpdate', {
       categoryId,
-      setCategories, // Pass the setCategories function to the CategoryUpdate screen
+      setCategories, // Passes the setCategories function to the CategoryUpdate screen
     });
   };
 
   const handleAddCategory = () => {
-    navigation.navigate('CategoryAdd', { setCategories: setCategories }); // Pass setCategories function as a parameter
+    navigation.navigate('CategoryAdd', { setCategories: setCategories }); // Passes setCategories function as a parameter
   };
 
   const CategoryItem = ({ category }: { category: Category }) => {

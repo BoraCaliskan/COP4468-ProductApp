@@ -8,7 +8,7 @@ const CategoryUpdateScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
   const { categoryId } = route.params;
-  const { setCategories } = route.params; // Retrieve the setCategories function from the route params
+  const { setCategories } = route.params; // Retrieves the setCategories function from the route params
   const [categoryName, setCategoryName] = useState('');
   const [categoryDetail, setCategoryDetail] = useState('');
 
@@ -37,8 +37,8 @@ const CategoryUpdateScreen = () => {
     axios
       .put(`https://northwind.vercel.app/api/categories/${categoryId}`, updatedCategory)
       .then(() => {
-        setCategories(); // Call the setCategories function to update the categories immediately
-        navigation.goBack(); // Navigate back to the Category page
+        setCategories(); // Calls the setCategories function to update the categories immediately
+        navigation.goBack(); // Navigates back to the Category page
       })
       .catch(error => {
         console.error('Error updating category:', error);

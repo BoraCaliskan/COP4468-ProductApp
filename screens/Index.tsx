@@ -13,7 +13,7 @@ const Index = ({ navigation }: any) => {
           <Button
             mode="contained"
             onPress={() => {
-              // Handle button press
+              // Handles button press
             }}
             style={styles.button}
             labelStyle={styles.buttonText}

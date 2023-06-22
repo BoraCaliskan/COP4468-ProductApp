@@ -28,23 +28,23 @@ const ProductDetail = ({ route, navigation }: any) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <View style={[styles.row, { borderBottomColor: colors.lightgray }]}>
+        <View style={[styles.row, { borderBottomColor: "lightgray" }]}>
           <Text style={styles.label}>Product Name:</Text>
           <Text style={styles.value}>{detail.name}</Text>
         </View>
-        <View style={[styles.row, { borderBottomColor: colors.lightgray }]}>
+        <View style={[styles.row, { borderBottomColor: "lightgray" }]}>
           <Text style={styles.label}>Quantity Per Unit:</Text>
           <Text style={styles.value}>{detail.quantityPerUnit}</Text>
         </View>
-        <View style={[styles.row, { borderBottomColor: colors.lightgray }]}>
+        <View style={[styles.row, { borderBottomColor: "lightgray"}]}>
           <Text style={styles.label}>Unit Price:</Text>
           <Text style={styles.value}>{detail.unitPrice}</Text>
         </View>
-        <View style={[styles.row, { borderBottomColor: colors.lightgray }]}>
+        <View style={[styles.row, { borderBottomColor: "lightgray" }]}>
           <Text style={styles.label}>Units In Stock:</Text>
           <Text style={styles.value}>{detail.unitsInStock}</Text>
         </View>
-        <View style={[styles.row, { borderBottomColor: colors.lightgray }]}>
+        <View style={[styles.row, { borderBottomColor: "lightgray" }]}>
           <Text style={styles.label}>Units On Order:</Text>
           <Text style={styles.value}>{detail.unitsOnOrder}</Text>
         </View>

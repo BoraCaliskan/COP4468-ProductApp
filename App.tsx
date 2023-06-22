@@ -31,9 +31,9 @@ const App = () => {
         <Stack.Navigator
           screenOptions={{
             headerStyle: {
-              backgroundColor: colors.primary, // Set header background color here
+              backgroundColor: colors.primary, // Sets header background color here
             },
-            headerTintColor: '#ffffff', // Set header text color here
+            headerTintColor: '#ffffff', // Sets header text color here
             headerTitleStyle: {
               fontWeight: 'bold',
             },
