@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import BottomNavigationBar from './BottomNavigationBar';
 
 interface Category {
@@ -10,7 +11,7 @@ interface Category {
   description: string;
 }
 
-const Category = () => {
+const CategoryScreen = () => {
   const navigation = useNavigation();
   const [categories, setCategories] = useState<Category[]>([]);
 
@@ -71,10 +72,10 @@ const Category = () => {
         <Text style={styles.categoryName}>{category.name}</Text>
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={handleDelete} style={styles.deleteButton}>
-            <Text style={styles.buttonText}>Delete</Text>
+            <Icon name="trash" size={20} color="white" />
           </TouchableOpacity>
           <TouchableOpacity onPress={handleUpdate} style={styles.updateButton}>
-            <Text style={styles.buttonText}>Update</Text>
+            <Icon name="pencil" size={20} color="white" />
           </TouchableOpacity>
         </View>
       </View>
@@ -95,7 +96,7 @@ const Category = () => {
         contentContainerStyle={styles.listContainer}
       />
       <TouchableOpacity style={styles.addCategoryButton} onPress={handleAddCategory}>
-        <Text style={styles.buttonText}>Add Category</Text>
+        <Icon name="plus" size={20} color="white" />
       </TouchableOpacity>
       <BottomNavigationBar navigation={navigation} />
     </View>
@@ -148,19 +149,6 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     borderRadius: 5,
   },
-  buttonText: {
-    color: 'white',
-  },
-  addButton: {
-    position: 'absolute',
-    bottom: 50,
-    right: 20,
-    backgroundColor: 'green',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 5,
-    alignSelf: 'flex-end',
-  },
 });
 
-export default Category;
+export default CategoryScreen;

@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const CategoryAdd = () => {
+const CategoryAddScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
   const { addCallback } = route.params;
@@ -44,6 +45,7 @@ const CategoryAdd = () => {
         onChangeText={text => setCategoryDetail(text)}
       />
       <TouchableOpacity style={styles.addButton} onPress={handleAddCategory}>
+        <Icon name="plus" size={20} color="white" />
         <Text style={styles.buttonText}>Add Category</Text>
       </TouchableOpacity>
     </View>
@@ -69,6 +71,9 @@ const styles = StyleSheet.create({
   },
   addButton: {
     backgroundColor: 'blue',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
@@ -77,7 +82,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
+    marginLeft: 5,
   },
 });
 
-export default CategoryAdd;
+export default CategoryAddScreen;

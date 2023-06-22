@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const CategoryUpdate = () => {
+const CategoryUpdateScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
   const { categoryId } = route.params;
@@ -59,6 +60,7 @@ const CategoryUpdate = () => {
         onChangeText={text => setCategoryDetail(text)}
       />
       <TouchableOpacity style={styles.updateButton} onPress={handleUpdateCategory}>
+        <Icon name="pencil" size={20} color="white" />
         <Text style={styles.buttonText}>Update Category</Text>
       </TouchableOpacity>
     </View>
@@ -84,6 +86,9 @@ const styles = StyleSheet.create({
   },
   updateButton: {
     backgroundColor: 'blue',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
@@ -92,7 +97,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
+    marginLeft: 5,
   },
 });
 
-export default CategoryUpdate;
+export default CategoryUpdateScreen;

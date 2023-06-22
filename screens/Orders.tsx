@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { View, Text, FlatList, Pressable, StyleSheet } from 'react-native';
+import { useTheme } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import BottomNavigationBar from './BottomNavigationBar';
 import ProductContext from './ProductContext';
 
 const Orders = ({ navigation }: any) => {
   const { selectedProducts, removeSelectedProduct } = useContext(ProductContext);
+  const { colors } = useTheme();
 
   const handleDeleteProduct = (id: number) => {
     removeSelectedProduct(id);
@@ -12,13 +15,13 @@ const Orders = ({ navigation }: any) => {
 
   const renderProductItem = ({ item }: any) => {
     return (
-      <View style={styles.orderItem}>
+      <View style={[styles.orderItem, { borderBottomColor: colors.lightgray }]}>
         <Text style={styles.productName}>{item.name}</Text>
         <Pressable
           style={styles.deleteButton}
           onPress={() => handleDeleteProduct(item.id)}
         >
-          <Text style={styles.deleteButtonText}>Delete</Text>
+          <Icon name="trash" size={20} color="white" />
         </Pressable>
       </View>
     );
@@ -52,7 +55,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     padding: 10,
     borderBottomWidth: 1,
-    borderBottomColor: 'lightgray',
   },
   productName: {
     fontSize: 18,
@@ -61,10 +63,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     padding: 5,
     borderRadius: 5,
-  },
-  deleteButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
   },
   emptyContainer: {
     flex: 1,
